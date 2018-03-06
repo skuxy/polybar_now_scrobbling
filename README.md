@@ -23,3 +23,5 @@ format-prefix-foreground = ${colors.foreground}
 
 label = %output:0:50%
 ```
+
+![Example of this plugin in action](https://i.imgur.com/cZMv0yA.png "Example")
