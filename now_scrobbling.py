@@ -5,6 +5,7 @@ import time
 import requests
 
 NOTHING = 'Nothing :('
+NO_CONNECTION = 'No connection :('
 API_KEY = ""
 USERNAME = ''
 
@@ -42,7 +43,11 @@ def format_track(track):
 def main():
     while True:
         time.sleep(2)
-        response = make_request()
+        try:
+            response = make_request()
+        except requests.ConnectionError:
+            print(NO_CONNECTION, flush=True)
+
         if response.status_code != 200:
             continue
 
